@@ -1,0 +1,114 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.parallax-window {
+    height: 95vh;
+    min-height: 40vw;
+    background: transparent;
+    position: relative;
+}
+
+.parallax-mirror:after {
+    border-bottom: 70px solid white;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    left: 46%;
+    transform: translate3d(0px, 7px, 0px); /* fix for 1px bottom line */
+}
+
+#top-parallax-menu {
+    width: 40%;
+    float: left;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+#top-advertised-event {
+    position: absolute;
+    right: 1vw;
+    bottom: 4vh;
+    width: 35vw;
+    max-width: 400px;
+    background: black;
+    border: 3px solid red;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#top-advertised-event h2, #top-advertised-event h3 {
+    margin: 0;
+    padding: 5px;
+}
+
+.button {
+    background: #de3500;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+body > header h1 {
+    font-family: 'Cutepunk', sans-serif;
+    position: relative;
+    text-shadow: 0 0 10px green;
+}
+
+body > header h1:after {
+    content: '';
+    position: absolute;
+    bottom: -31vh;
+    left: 50%;
+    width: 1px;
+    height: 30vh;
+    background: white;
+    box-shadow: 10px 20px 0 white;
+}
+
+section header {
+    padding-top: 40px;
+}
+
+section header h1 {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    line-height: 2.8125rem;
+    letter-spacing: -0.075rem;
+}
+
+.partner-logo-images {
+    text-align: center;
+}
+
+.partner-logo-images img {
+    height: 80px;
+    margin: 10px;
+}
+
+@media (max-width: 800px) {
+    #top-parallax-menu {
+        width: 90%;
+    }
+    body > header h1:after, .parallax-mirror:after {
+        display: none;
+    }
+    #top-advertised-event {
+        width: 50%;
+        right: 22%;
+    }
+}

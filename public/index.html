@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ClimbingCompetitions.js</title>
+        <link rel="stylesheet" href="css/cutepunk.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <header class="parallax-window" data-parallax="scroll" data-image-src="img/climber.jpg"
+             data-bleed="22" data-position-y="top">
+            <div id="top-parallax-menu">
+                <h1 style="color: white;">ClimbingCompetition.js</h1>
+                <!--a class="button">Log in</a>
+                <a class="button">Register</a-->
+            </div>
+            <div id="top-advertised-event">
+                <h2 style="color: red;" id="advert_responsive_headline">BOULDERING LIVE!</h2>
+                <h3 style="color: red;" id="advert_responsive_subheadline">TIME TO EVENT: 3 DAYS</h3>
+            </div>
+        </header>
+
+        <section>
+            <header>
+                <h1>Ongoing event</h1>
+            </header>
+            <table>
+                <tr>
+                    <td>asd</td>
+                    <td>asd</td>
+                </tr>
+                <tr>
+                    <td>asd</td>
+                    <td>asd</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <header>
+                <h1>Coś innego</h1>
+            </header>
+            <h2>asd</h2>
+            <h2>asd</h2>
+            <h2>asd</h2>
+            <h2>asd</h2>
+        </section>
+
+        <section>
+            <header>
+                <h1>Our partners</h1>
+            </header>
+            <div class="partner-logo-images">
+                <img src="img/logo/avatar.png"/>
+                <img src="img/logo/cwf.png"/>
+                <img src="img/logo/funclimb.jpg"/>
+                <img src="img/logo/korona.jpg"/>
+                <img src="img/logo/kw.jpg"/>
+                <img src="img/logo/reni.jpg"/>
+            </div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+        <script src="js/parallax.min.js"></script>
+        <script src="js/jquery.fittext.js"></script>
+        <script>
+            jQuery("#top-parallax-menu h1").fitText(0.5, { minFontSize: '75px', maxFontSize: '100px' });
+            jQuery("#advert_responsive_headline").fitText();
+            jQuery("#advert_responsive_subheadline").fitText(1.2);
+        </script>
+    </body>
+</html>
