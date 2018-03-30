@@ -1,4 +1,7 @@
 # ClimbingCompetition.js
+[![Build status](https://travis-ci.org/Zax37/ClimbingCompetition.js.svg?branch=master)](https://travis-ci.org/Zax37/ClimbingCompetition.js)
+[![codecov.io](https://img.shields.io/codecov/c/github/Zax37/ClimbingCompetition.js.svg?style=flat-square)](https://codecov.io/github/Zax37/ClimbingCompetition.js?branch=master)
+
 Climbing competition web application created with node.js
 
 It allows multiple organizations to host a competition,
