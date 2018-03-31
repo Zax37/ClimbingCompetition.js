@@ -42,7 +42,7 @@ function Competition(ps) {
         events.push(new CompetitionEvent(participant, null, CompetitionEvent.Status.Disqualified))
     };
     this.getScores = function () {
-        ScoreCalculator.calculate( [...events] );
+        return ScoreCalculator.calculate( [...events] );
     }
 }
 
