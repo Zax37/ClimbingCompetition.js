@@ -5,7 +5,7 @@
   "main": "src",
   "scripts": {
     "start": "node %npm_package_main%",
-    "test": "nyc mocha src/**/*.spec.js test/*.js",
+    "test": "nyc mocha src/**/*.spec.js test/*.js --recursive",
     "unit-tests": "mocha src/**/*.spec.js",
     "func-tests": "mocha test/*.js",
     "report-coverage": "nyc report --reporter=lcov | codecov"
@@ -24,6 +24,7 @@
       "lcov",
       "text-summary"
     ],
+    "cache": true,
     "all": true
   },
   "repository": {
