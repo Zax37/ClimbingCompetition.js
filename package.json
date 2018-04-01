@@ -24,7 +24,6 @@
       "lcov",
       "text-summary"
     ],
-    "cache": true,
     "all": true
   },
   "repository": {
