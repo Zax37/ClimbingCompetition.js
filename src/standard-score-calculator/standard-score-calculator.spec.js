@@ -3,7 +3,7 @@ const expect = require('expect.js');
 const Competition = require('../competition');
 const StandardScoreCalculator = require('./standard-score-calculator');
 
-let competition = new Competition("TestCompetition");
+let competition;
 
 let participantName = "Some Name";
 let participant = new Competition.Participant(participantName);
@@ -11,16 +11,19 @@ let route1 = new Competition.Route(true);
 let route2 = new Competition.Route(true);
 let anotherParticipant = new Competition.Participant("Other Name");
 
-competition.addParticipant(participant);
-competition.addRoute(route1);
-competition.addRoute(route2);
-
-competition.addEvent(participant, route1, Competition.Event.Status.Bonus);
-competition.addEvent(participant, route1, Competition.Event.Status.Top);
-competition.addEvent(participant, route2, Competition.Event.Status.Bonus);
-
-
 describe('StandardScoreCalculator', function () {
+    beforeEach(function () {
+        competition = new Competition("TestCompetition");
+
+        competition.addParticipant(participant);
+        competition.addRoute(route1);
+        competition.addRoute(route2);
+
+        competition.addEvent(participant, route1, Competition.Event.Status.Bonus);
+        competition.addEvent(participant, route1, Competition.Event.Status.Top);
+        competition.addEvent(participant, route2, Competition.Event.Status.Bonus);
+    });
+
     it('should count tops and bonuses', function () {
         let data = StandardScoreCalculator.calculate(competition).forParticipant(participant);
         expect(data.getTopCount()).to.be(1);

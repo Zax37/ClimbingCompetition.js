@@ -35,11 +35,9 @@ let StandardScoreCalculator = new function () {
             switch (status) {
                 case Status.Top:
                     data.topCount++;
-                    data.points += 2;
                     break;
                 case Status.Bonus:
                     data.bonusCount++;
-                    data.points += 1;
                     break;
                 case Status.Disqualified:
                     data.disqualified = true;
@@ -51,6 +49,10 @@ let StandardScoreCalculator = new function () {
 
             results[pid] = data;
         });
+
+        function countScore(data) {
+            return data.disqualified ? 0 : (data.topCount*2+data.bonusCount);
+        }
 
         return new function CalculatedScores() {
             this.forParticipant = function (participant) {
@@ -66,7 +68,7 @@ let StandardScoreCalculator = new function () {
                     let data = results[pid];
 
                     this.sumUp = function () {
-                        return data.disqualified?0:data.points;
+                        return countScore(data);
                     };
 
                     this.getTopCount = function () {
@@ -85,7 +87,7 @@ let StandardScoreCalculator = new function () {
                     bonus: data.bonusCount,
                     top: data.topCount,
                     disqualified: data.disqualified,
-                    score: data.disqualified?0:data.points
+                    score: countScore(data)
                 }));
             };
         };
