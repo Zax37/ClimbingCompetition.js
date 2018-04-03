@@ -8,6 +8,9 @@ const properties = require('./properties');
 const express = require('express');
 const application = express();
 
+// PRETTY-PRINT JSON OUTPUT
+application.set('json spaces', 2);
+
 // MAPPINGS - API - BEFORE SSL FORCING
 application.use('/api/v1/', require('./api/v1'));
 

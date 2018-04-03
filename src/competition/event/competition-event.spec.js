@@ -1,6 +1,8 @@
 const CompetitionEvent = require('./competition-event');
 
 const expect = require('expect.js');
+const moment = require('moment');
+const momentBefore = moment();
 
 let participantMock = 'participant';
 let routeMock = 'route';
@@ -20,6 +22,8 @@ describe('Competition event', function () {
         expect(unit.getParticipant()).to.be(participantMock);
         expect(unit.getRoute()).to.be(routeMock);
         expect(unit.getStatus()).to.be(status);
+        expect(unit.getTimestamp().isSameOrAfter(momentBefore)).to.be(true);
+        expect(moment().isSameOrAfter(unit.getTimestamp())).to.be(true);
     });
 
     it('should not expose its private fields', function () {

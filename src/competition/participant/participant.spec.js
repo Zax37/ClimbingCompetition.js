@@ -4,7 +4,6 @@ const Participant = require('./participant');
 
 let name = "First Last";
 let num = 37;
-let anything = "anything";
 let unit = new Participant(name);
 
 describe('Participant', function() {

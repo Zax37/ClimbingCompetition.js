@@ -24,6 +24,9 @@ function CompetitionEvent(p, r, s) {
         },
         getStatus : function() {
             return status;
+        },
+        getTimestamp : function () {
+            return timestamp;
         }
     };
 }

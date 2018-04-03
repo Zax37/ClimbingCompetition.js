@@ -2,8 +2,9 @@ const expect = require('expect.js');
 
 const Competition = require('./competition');
 
-let unit = new Competition();
-let participantMock = new Competition.Participant("Name");
+let competitionName = "Some name";
+let unit = new Competition(competitionName);
+let participantMock = new Competition.Participant("name");
 let routeMock = new Competition.Route();
 let statusTop = Competition.Event.Status.Top;
 let statusBonus = Competition.Event.Status.Bonus;
@@ -27,6 +28,7 @@ describe('Competition', function() {
     });
 
     it('should store data', function () {
+        expect(unit.getName()).to.be(competitionName);
         unit.addParticipant(participantMock);
         unit.addRoute(routeMock);
         unit.addEvent(participantMock, routeMock, statusTop);

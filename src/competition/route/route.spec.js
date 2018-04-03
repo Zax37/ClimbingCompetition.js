@@ -11,7 +11,7 @@ describe('Route', function() {
     });
 
     it('should take only true for bonus', function () {
-        expect(Route).withArgs("true").to.throwException();
+        expect(Route).withArgs("string").to.throwException();
         expect(Route).withArgs(true).to.not.throwException();
     });
 
