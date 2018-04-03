@@ -85,7 +85,7 @@ let StandardScoreCalculator = new function () {
                     bonus: data.bonusCount,
                     top: data.topCount,
                     disqualified: data.disqualified,
-                    score: data.points
+                    score: data.disqualified?0:data.points
                 }));
             };
         };

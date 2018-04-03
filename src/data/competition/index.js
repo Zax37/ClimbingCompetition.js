@@ -1,5 +1,5 @@
 const expect = require('expect.js');
-const Competition = require('../competition');
+const Competition = require('../../competition');
 const ScoreCalculator = require('../../standard-score-calculator');
 
 function CompetitionDataHelper(competitions, participants, routes) {
