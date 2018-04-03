@@ -14,5 +14,19 @@ module.exports = [
             pid: { text: "Participant id." },
             rid: { text: "Route id."},
             status: { text: "Event status." }
+        }),
+    new Endpoint(CompetitionData.markTop, "markTop", "POST",
+        {
+            pid: { text: "Participant id." },
+            rid: { text: "Route id."}
+        }),
+    new Endpoint(CompetitionData.markBonus, "markBonus", "POST",
+        {
+            pid: { text: "Participant id." },
+            rid: { text: "Route id."}
+        }),
+    new Endpoint(CompetitionData.disqualify, "disqualify", "POST",
+        {
+            pid: { text: "Participant id." }
         })
 ];

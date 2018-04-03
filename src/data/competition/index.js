@@ -1,4 +1,5 @@
 const expect = require('expect.js');
+const Competition = require('../competition');
 
 function CompetitionDataHelper(competitions, participants, routes) {
     let competition;
@@ -65,6 +66,31 @@ function CompetitionDataHelper(competitions, participants, routes) {
             let participant = participants[pid];
             let route = routes[rid];
             competition.addEvent(participant, route, status);
+        },
+
+        markTop: function (params) {
+            let status = Competition.Event.Status.Top;
+            let [ pid, rid ] = getId(params, ['pid', 'rid']);
+
+            let participant = participants[pid];
+            let route = routes[rid];
+            competition.addEvent(participant, route, status);
+        },
+
+        markBonus: function (params) {
+            let status = Competition.Event.Status.Bonus;
+            let [ pid, rid ] = getId(params, ['pid', 'rid']);
+
+            let participant = participants[pid];
+            let route = routes[rid];
+            competition.addEvent(participant, route, status);
+        },
+
+        disqualify: function (params) {
+            let [ pid ] = getId(params, ['pid']);
+
+            let participant = participants[pid];
+            competition.disqualify(participant);
         }
     };
     
