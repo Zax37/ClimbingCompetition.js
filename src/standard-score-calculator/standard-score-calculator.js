@@ -10,12 +10,15 @@ let StandardScoreCalculator = new function () {
         let participants = competition.getParticipants();
         let results = new Array(participants.length);
 
-        results.fill({
-            bonusCount: 0,
-            topCount: 0,
-            points: 0,
-            disqualified: false
-        });
+        for (let i=0; i<results.length; i++)
+        {
+            results[i] = {
+                bonusCount: 0,
+                topCount: 0,
+                points: 0,
+                disqualified: false
+            };
+        }
 
         events.forEach(event => {
             let participant = event.getParticipant();
