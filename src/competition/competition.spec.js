@@ -40,18 +40,6 @@ describe('Competition', function() {
         expect(event.getStatus()).to.be(statusTop);
     });
 
-    it('should use score calculator', function () {
-        unit.addEvent(participantMock, routeMock, statusTop);
-        let participantScores = unit.getScores().forParticipant(participantMock);
-        expect(participantScores.sumUp()).to.be.greaterThan(0);
-    });
-
-    it('should give zero for disqualified', function () {
-        unit.disqualify(participantMock);
-        let participantScores = unit.getScores().forParticipant(participantMock);
-        expect(participantScores.sumUp()).to.be(0);
-    });
-
     describe('should raise error when', function () {
         let addingEvent = unit.addEvent;
 

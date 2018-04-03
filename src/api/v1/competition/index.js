@@ -28,5 +28,6 @@ module.exports = [
     new Endpoint(CompetitionData.disqualify, "disqualify", "POST",
         {
             pid: { text: "Participant id." }
-        })
+        }),
+    new Endpoint(CompetitionData.getScores, "scoreTable", "GET")
 ];

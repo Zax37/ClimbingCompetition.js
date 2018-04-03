@@ -1,5 +1,6 @@
 const expect = require('expect.js');
 const Competition = require('../competition');
+const ScoreCalculator = require('../../standard-score-calculator');
 
 function CompetitionDataHelper(competitions, participants, routes) {
     let competition;
@@ -91,6 +92,10 @@ function CompetitionDataHelper(competitions, participants, routes) {
 
             let participant = participants[pid];
             competition.disqualify(participant);
+        },
+
+        getScores: function (params) {
+            return ScoreCalculator.calculate(competition).forAll();
         }
     };
     

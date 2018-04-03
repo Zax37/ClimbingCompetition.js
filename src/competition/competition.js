@@ -5,7 +5,6 @@ const CompetitionParticipant = require('./participant');
 const CompetitionRoute = require('./route');
 
 const moment = require('moment');
-const ScoreCalculator = require('./standard-score-calculator');
 
 function Competition(n, ps) {
     expect(n).to.be.a('string');
@@ -56,10 +55,6 @@ function Competition(n, ps) {
         expect(participants).to.contain(participant);
         events.push(new CompetitionEvent(participant, null, CompetitionEvent.Status.Disqualified))
     };
-
-    this.getScores = function () {
-        return ScoreCalculator.calculate( [...events] );
-    }
 }
 
 Competition.Event = CompetitionEvent;
