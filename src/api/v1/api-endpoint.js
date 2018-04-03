@@ -73,6 +73,9 @@ function RelativeEndpoint(rel, params) {
                 case "PUT":
                     router.put(url, implementation);
                     break;
+                case "POST":
+                    router.post(url, implementation);
+                    break;
                 default:
                     throw new Error("Unexpected method: "+method);
             }
