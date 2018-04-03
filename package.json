@@ -2,12 +2,12 @@
   "name": "climbingcompetition",
   "version": "1.0.0",
   "description": "Climbing competition web application created with node.js",
-  "main": "src/server.js",
+  "main": "src",
   "scripts": {
     "start": "node %npm_package_main%",
-    "test": "nyc mocha src/**/*.spec.js test/*.js",
-    "unit-tests": "mocha src/**/*.spec.js",
-    "func-tests": "mocha test/*.js",
+    "test": "nyc mocha \"src/**/*.spec.js\" \"test/*.js\"",
+    "unit-tests": "mocha \"src/**/*.spec.js\"",
+    "func-tests": "mocha \"test/*.js\"",
     "report-coverage": "nyc report --reporter=lcov | codecov"
   },
   "nyc": {
@@ -45,7 +45,8 @@
   "dependencies": {
     "async-exit-hook": "^2.0.1",
     "express": "^4.16.2",
-    "express-force-ssl": "^0.3.2"
+    "express-force-ssl": "^0.3.2",
+    "moment": "^2.22.0"
   },
   "devDependencies": {
     "codecov": "^3.0.0",

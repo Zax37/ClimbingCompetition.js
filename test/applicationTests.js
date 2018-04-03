@@ -1,6 +1,6 @@
 const request = require('supertest');
 const expect = require('expect.js');
-const app = require('../src/server')({ serverless: true });
+const app = require('../src/application');
 const properties = require('../src/properties');
 const API_URL = '/api/v1';
 
