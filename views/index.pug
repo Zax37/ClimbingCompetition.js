@@ -1,0 +1,58 @@
+doctype html
+html
+    head
+        title= APPLICATION_TITLE
+        link(rel='stylesheet', href='css/cutepunk.css', type='text/css' )
+        link(rel='stylesheet', href='css/style.css', type='text/css' )
+    body
+        header.parallax-window(data-parallax="scroll", data-image-src="img/climber.jpg",
+            data-bleed="22", data-position-y="top")
+            #top-parallax-menu
+                h1= APPLICATION_TITLE
+            #top-advertised-event
+                h2#advert_responsive_headline BOULDERING LIVE!
+                h3#advert_responsive_subheadline TIME TO EVENT: 3 DAYS
+        each competition in COMPETITIONS
+            section
+                header
+                    h1 Ongoing event
+                    h2=competition.name
+                .competition-scores
+                    table
+                        tbody
+                            tr
+                                th Participant name
+                                th BONUS
+                                th TOPS
+                                th SCORE
+                            each line in GET_SCORES(competition.id)
+                                tr(class=line.disqualified?"disqualified":undefined)
+                                    td= line.name
+                                    td= line.bonus
+                                    td= line.top
+                                    td= line.score
+        section
+            header
+                h1 Gallery
+                h2 From our previous events
+            .gallery
+                each image in [1, 2, 3, 4, 5, 6]
+                    img(src="img/gallery/"+image+".jpg")
+        section
+            header
+                h1 Our partners
+            .partner-logo-images
+                img(src="img/logo/avatar.png")
+                img(src="img/logo/cwf.png")
+                img(src="img/logo/funclimb.jpg")
+                img(src="img/logo/korona.jpg")
+                img(src="img/logo/kw.jpg")
+                img(src="img/logo/reni.jpg")
+        footer
+            p © Copyright 2018 Zachariasz 'Zax37' Zacharski
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js",
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
+            crossorigin="anonymous")
+        script(src="js/parallax.min.js")
+        script(src="js/jquery.fittext.js")
+        script(src="js/script.js")

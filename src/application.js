@@ -11,6 +11,9 @@ const application = express();
 // PRETTY-PRINT JSON OUTPUT
 application.set('json spaces', 2);
 
+// SET VIEW ENGINE TO PUG
+application.set('view engine', 'pug');
+
 // MAPPINGS - API - BEFORE SSL FORCING
 application.use('/api/v1/', require('./api/v1'));
 
@@ -23,6 +26,7 @@ application.set('forceSSLOptions', {
 
 // MAPPINGS - STATIC RESOURCES
 application.use(express.static('public'));
+
 // MAPPINGS - WEB APP
 application.use(require('./webpage'));
 

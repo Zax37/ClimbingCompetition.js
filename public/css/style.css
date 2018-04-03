@@ -31,6 +31,10 @@ html, body {
     margin-left: 5%;
 }
 
+#top-parallax-menu h1 {
+    color: white;
+}
+
 #top-advertised-event {
     position: absolute;
     right: 1vw;
@@ -41,6 +45,7 @@ html, body {
     border: 3px solid red;
     padding: 10px;
     vertical-align: middle;
+    color: red;
 }
 
 #top-advertised-event h2, #top-advertised-event h3 {
@@ -56,9 +61,10 @@ html, body {
     display: block;
 }
 
-table, tr, td {
+table, tr, td, th {
     border: 1px solid black;
     border-collapse: collapse;
+    text-align: center;
 }
 
 body > header h1 {
@@ -89,6 +95,50 @@ section header h1 {
     font-size: 2.5rem;
     line-height: 2.8125rem;
     letter-spacing: -0.075rem;
+    margin-bottom: 0.1em;
+}
+
+section header h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+section > div {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 30%;
+    height: 200px;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+.gallery img:nth-child(3n) {
+    margin-right: 0;
+}
+
+.competition-scores > table {
+    width: 100%;
+}
+
+.competition-scores td, .competition-scores th {
+    padding: 5px 10px;
+}
+
+.competition-scores tr.disqualified td {
+    position: relative;
+}
+
+.competition-scores tr.disqualified td:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-bottom: 1px solid #111;
+    width: 100%;
 }
 
 .partner-logo-images {
@@ -98,6 +148,19 @@ section header h1 {
 .partner-logo-images img {
     height: 80px;
     margin: 10px;
+}
+
+body footer {
+    margin-top: 30px;
+    background: gray;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+body footer p {
+    margin: 0;
+    color: white;
 }
 
 @media (max-width: 800px) {
@@ -110,5 +173,14 @@ section header h1 {
     #top-advertised-event {
         width: 50%;
         right: 22%;
+    }
+    .partner-logo-images {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .gallery img {
+        height: 20vw;
     }
 }
